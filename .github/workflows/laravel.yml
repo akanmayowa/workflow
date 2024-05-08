@@ -28,7 +28,7 @@ jobs:
         uses: php-actions/phpcs@v1
         with:
           php_version: 8.1
-          path: src/
+          path: app/
           standard: phpcs.xml
       - name: Create Database
         run: |
