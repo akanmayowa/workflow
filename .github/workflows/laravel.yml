@@ -19,7 +19,7 @@ jobs:
       - name: Copy .env
         run: php -r "file_exists('.env') || copy('.env.example', '.env');"
       - name: Install Dependencies
-        run: composer update
+        run: composer update --lock t
       - name: Generate key
         run: php artisan key:generate
       - name: Directory Permissions
@@ -27,8 +27,6 @@ jobs:
       - uses: actions/checkout@v3
       - name: Composer install
         uses: php-actions/composer@v6
-      - name: Composer Installs
-        run: composer update --lock t
       - name: PHP Code Sniffer
         uses: php-actions/phpcs@v1
         with:
